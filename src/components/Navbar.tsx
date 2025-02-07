@@ -1,5 +1,5 @@
 import { Button } from "./ui/button";
-import { Home, Info, Settings } from "lucide-react";
+import { Home, Settings, Image as ImageIcon } from "lucide-react";
 
 const Navbar = () => {
   return (
@@ -11,17 +11,25 @@ const Navbar = () => {
               <h1 className="text-xl font-bold">Prompt Manager</h1>
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-4">
-              <Button variant="ghost" className="flex items-center gap-2">
+              <Button
+                variant="ghost"
+                className="flex items-center gap-2"
+                onClick={() => (window.location.href = "/")}
+              >
                 <Home className="h-4 w-4" />
                 Dashboard
+              </Button>
+              <Button
+                variant="ghost"
+                className="flex items-center gap-2"
+                onClick={() => (window.location.href = "/gallery")}
+              >
+                <ImageIcon className="h-4 w-4" />
+                Gallery
               </Button>
               <Button variant="ghost" className="flex items-center gap-2">
                 <Settings className="h-4 w-4" />
                 Settings
-              </Button>
-              <Button variant="ghost" className="flex items-center gap-2">
-                <Info className="h-4 w-4" />
-                About
               </Button>
             </div>
           </div>
