@@ -1,6 +1,8 @@
 import React from "react";
 import PromptDashboard from "./PromptDashboard";
 import Navbar from "./Navbar";
+import { Button } from "./ui/button";
+import ImageGallery from "./ImageGallery";
 
 import { loadPrompts, savePrompts, createPrompt } from "../lib/storage";
 import { Prompt } from "../lib/types";
@@ -72,6 +74,18 @@ const Home = () => {
             onDeletePrompt={handleDeletePrompt}
             onMergePrompts={handleMergePrompts}
           />
+          <div className="mt-12">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-2xl font-bold">Recent Generations</h2>
+              <Button
+                onClick={() => (window.location.href = "/gallery")}
+                variant="outline"
+              >
+                View All Images
+              </Button>
+            </div>
+            <ImageGallery />
+          </div>
         </div>
       </main>
     </div>
